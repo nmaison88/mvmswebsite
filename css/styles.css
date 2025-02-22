@@ -1,9 +1,5 @@
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Agency v7.0.12 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
+
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -10947,7 +10943,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("../assets/img/header-bg.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
