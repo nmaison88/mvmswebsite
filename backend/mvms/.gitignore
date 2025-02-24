@@ -1,0 +1,12 @@
+node_modules
+.serverless
+# Serverless directories
+.serverless
+.env
+**/**/.env
+*coverage/
+xunit.xml
+*.nyc_output/
+*.serverless
+*.webpack
+package-lock.json

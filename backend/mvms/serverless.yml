@@ -1,0 +1,41 @@
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: mvms
+useDotenv: true
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  endpointType: REGIONAL
+  stage: ${opt:stage, 'test'}
+  region: 'us-west-2'
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource:
+            - ${env:USERS_TABLE}
+  environment:
+    USERS_TABLE: ${env:USERS_TABLE}
+    APP_ENV: ${env:APP_ENV}
+    REGION: ${self:provider.region}
+    SERVICE: ${self:service}
+
+
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: "*"
+
+
+   
